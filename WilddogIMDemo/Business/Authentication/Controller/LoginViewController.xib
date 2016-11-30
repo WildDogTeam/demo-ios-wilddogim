@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="chooseUserBtn" destination="GOP-pA-OaK" id="nOm-lA-HdJ"/>
+                <outlet property="loginBtn" destination="A1p-dD-BX0" id="eZn-hQ-71r"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOP-pA-OaK">
+                    <rect key="frame" x="20" y="252" width="335" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="kLc-4D-Fev"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="选择登录用户 &gt;">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseLoginUser:" destination="-1" eventType="touchUpInside" id="hrQ-c0-4oR"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9rG-cM-woP">
+                    <rect key="frame" x="137" y="127" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="5wi-ax-Pug"/>
+                        <constraint firstAttribute="height" constant="100" id="q1b-zs-hCa"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-dD-BX0">
+                    <rect key="frame" x="20" y="323" width="335" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="bB5-OH-kQr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" red="0.8862745098" green="0.2156862745" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="3aY-sV-g4D"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GOP-pA-OaK" firstAttribute="top" secondItem="9rG-cM-woP" secondAttribute="bottom" constant="25" id="38Z-MW-i99"/>
+                <constraint firstItem="A1p-dD-BX0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Me9-Dz-rhh"/>
+                <constraint firstItem="9rG-cM-woP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Pmt-9R-hqk"/>
+                <constraint firstItem="9rG-cM-woP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="127" id="fj4-2t-2xM"/>
+                <constraint firstAttribute="trailing" secondItem="A1p-dD-BX0" secondAttribute="trailing" constant="20" id="l9o-Di-Fns"/>
+                <constraint firstAttribute="trailing" secondItem="GOP-pA-OaK" secondAttribute="trailing" constant="20" id="ruB-6K-1KX"/>
+                <constraint firstItem="GOP-pA-OaK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xe3-9S-IQp"/>
+                <constraint firstItem="A1p-dD-BX0" firstAttribute="top" secondItem="GOP-pA-OaK" secondAttribute="bottom" constant="21" id="zNN-15-Ef0"/>
+            </constraints>
+            <point key="canvasLocation" x="323.5" y="516.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Icon.png" width="100" height="100"/>
+    </resources>
+</document>

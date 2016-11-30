@@ -1,0 +1,21 @@
+//
+//  WilddogIMPrefixHeader.pch
+//  WilddogIM
+//
+//  Created by Garin on 16/6/29.
+//  Copyright © 2016年 www.wilddog.com. All rights reserved.
+//
+
+#ifndef WilddogIMPrefixHeader_pch
+#define WilddogIMPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Utility.h"
+#import "MyUIDefine.h"
+#import "WDGDemoConstDefine.h"
+#import "DTUtility.h"
+#import "UIViewAdditions.h"
+
+#endif /* WilddogIMPrefixHeader_pch */
