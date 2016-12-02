@@ -16,7 +16,7 @@
 #import "ConversationViewController.h"
 #import <SVProgressHUD.h>
 
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMClient.h"
 
 @interface AddToGroupController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) WDGIMClient *wildClient;

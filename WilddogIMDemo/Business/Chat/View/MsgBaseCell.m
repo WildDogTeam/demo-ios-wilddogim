@@ -19,7 +19,7 @@
 #import "UIImageView+WebCache.h"
 #import "ConversationViewController.h"
 
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMClient.h"
 
 @implementation MsgBaseCell
 

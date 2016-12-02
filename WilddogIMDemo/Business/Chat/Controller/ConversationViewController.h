@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMClient.h"
 
 @interface ConversationViewController : BaseViewController
 

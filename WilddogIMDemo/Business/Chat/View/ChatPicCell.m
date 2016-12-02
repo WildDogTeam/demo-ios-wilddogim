@@ -8,10 +8,9 @@
 
 #import "ChatPicCell.h"
 #import "MsgPicModel.h"
+#import "WDGIMMessage.h"
 #import "UIImageView+WebCache.h"
 #import "ImageBrowserView.h"
-
-#import <WilddogIM/WilddogIM.h>
 
 @interface ChatPicCell(){
 }

@@ -16,7 +16,9 @@
 #import "GroupInfoDataBase.h"
 #import "GroupInfoModel.h"
 
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMClient.h"
+#import "WDGIMMessage.h"
+#import "WDGIMConversation.h"
 
 #define WilddogAppID @"wdimdemo"
 

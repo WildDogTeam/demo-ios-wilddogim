@@ -7,7 +7,7 @@
 //
 
 #import "BaseModel.h"
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMMessage.h"
 
 @class WDGIMConversation;
 

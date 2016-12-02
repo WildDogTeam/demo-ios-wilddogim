@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 #ifdef DEBUG_WD
-#define Wilddog_IMDEMO_HOST @"https://imdemo.wilddog.com"
+#define Wilddog_IMDEMO_HOST @"http://imdemo.wilddog.com"
 #else
 #define Wilddog_IMDEMO_HOST @"https://imdemo.wilddog.com"
 #endif
 
 #ifdef DEBUG_WD
-#define WILD_IM_HOST @"https://im.wilddog.com"
+#define WILD_IM_HOST @"http://im.wilddog.com"
 #else
 #define WILD_IM_HOST @"https://im.wilddog.com"
 #endif

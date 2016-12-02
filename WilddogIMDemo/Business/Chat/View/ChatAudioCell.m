@@ -11,7 +11,7 @@
 #import "MsgBaseCell.h"
 #import "DTAudioManager.h"
 
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMMessage.h"
 
 @interface ChatAudioCell ()
 

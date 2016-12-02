@@ -23,7 +23,7 @@
 #import "UIImageView+WebCache.h"
 #import <SVProgressHUD.h>
 
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMClient.h"
 
 static ConversationListController *gCurrentConversationListController;
 
@@ -169,7 +169,6 @@ static ConversationListController *gCurrentConversationListController;
         model.avatarImageView = nil;
         
     }else if(model.type == MsgType_Group){
-        
         [conversation.members enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             UserInfoModel *user = [[UserInfoDataBase sharedInstance] getUserInfo:obj];
             [model.groupNames addObject:user.name];
