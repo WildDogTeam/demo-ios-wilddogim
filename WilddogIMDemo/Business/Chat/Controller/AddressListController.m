@@ -12,9 +12,9 @@
 #import "UIImageView+WebCache.h"
 #import "UserInfoModel.h"
 #import "UserInfoDataBase.h"
-#import "WDGIMClient.h"
 #import "AuthenticationService.h"
 #import <SVProgressHUD.h>
+#import <WilddogIM/WilddogIM.h>
 
 @interface AddressListController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;

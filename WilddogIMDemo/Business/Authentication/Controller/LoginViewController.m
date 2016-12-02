@@ -16,7 +16,7 @@
 #import "UserInfoDataBase.h"
 #import <SVProgressHUD.h>
 
-#import "WDGIMClient.h"
+#import <WilddogIM/WilddogIM.h>
 
 @interface LoginViewController ()
 

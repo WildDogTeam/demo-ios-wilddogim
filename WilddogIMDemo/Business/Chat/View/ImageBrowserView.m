@@ -19,7 +19,7 @@
 #import "MsgPicModel.h"
 #import "UIResponder+addtion.h"
 #import "UIImageView+WebCache.h"
-#import "WDGIMMessage.h"
+#import <WilddogIM/WilddogIM.h>
 
 @interface ImageBrowserView() <UIScrollViewDelegate>
 
@@ -97,7 +97,6 @@
             if (self.model.picPath.length == 0) {
                 [_activityIndicator startAnimating];
                 WDGIMMessageImage *imageMsg = (WDGIMMessageImage *)self.model.msg;
-
                 [self.imageView sd_setImageWithURL:imageMsg.originalURL placeholderImage:self.imageView.image completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                     
                 }];
