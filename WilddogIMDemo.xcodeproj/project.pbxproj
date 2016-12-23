@@ -182,20 +182,12 @@
 		39A0A4EE1DE9BDB900D13535 /* ImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A0A4ED1DE9BDB900D13535 /* ImageBrowserView.m */; };
 		39AA48DA1D22218E008647DE /* WilddogIMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA48D91D22218E008647DE /* WilddogIMTests.m */; };
 		39AA48E51D22218E008647DE /* WilddogIMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA48E41D22218E008647DE /* WilddogIMUITests.m */; };
-		39BCE9B01DEEA9FF00542C36 /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = 3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */; };
 		B661429142D98843E37AAC06 /* libPods-WilddogIMDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 436CCAB727516380F16ABAB4 /* libPods-WilddogIMDemoUITests.a */; };
 		B8D0BB22C5D3153AE15B56EC /* libPods-WilddogIMDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A345288FE06C2DF62F41EA /* libPods-WilddogIMDemoTests.a */; };
 		D79CE56451176C8767909CB2 /* libPods-WilddogIMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E92FAC9158F22CFC5B61B5C /* libPods-WilddogIMDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3986F88E1D532B2D006BC2D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 396E67981D4322DA0046478F;
-			remoteInfo = WilddogIM;
-		};
 		39AA48D61D22218E008647DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 39AA48B11D22218E008647DE /* Project object */;
@@ -208,13 +200,6 @@
 			containerPortal = 39AA48B11D22218E008647DE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 39AA48B81D22218E008647DE;
-			remoteInfo = WilddogIM;
-		};
-		39BCE9B11DEEAA0600542C36 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 396E67971D4322DA0046478F;
 			remoteInfo = WilddogIM;
 		};
 /* End PBXContainerItemProxy section */
@@ -455,7 +440,6 @@
 		396E68F71D433A440046478F /* IMKitHttpUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKitHttpUtil.h; sourceTree = "<group>"; };
 		396E68F81D433A440046478F /* IMKitHttpUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKitHttpUtil.m; sourceTree = "<group>"; };
 		398174891D40FBD40056156D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WilddogIM.xcodeproj; path = WilddogIM/WilddogIM.xcodeproj; sourceTree = "<group>"; };
 		399461E31E02926F00B6B0CC /* amr_wav_converter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amr_wav_converter.c; sourceTree = "<group>"; };
 		399461E41E02926F00B6B0CC /* amr_wav_converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amr_wav_converter.h; sourceTree = "<group>"; };
 		399461E51E02926F00B6B0CC /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
@@ -495,7 +479,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39BCE9B01DEEA9FF00542C36 /* ReferenceProxy in Frameworks */,
 				399461EB1E02927000B6B0CC /* libopencore-amrnb.a in Frameworks */,
 				D79CE56451176C8767909CB2 /* libPods-WilddogIMDemo.a in Frameworks */,
 			);
@@ -952,14 +935,6 @@
 			path = WildIMKitDB;
 			sourceTree = "<group>";
 		};
-		3986F88B1D532B2D006BC2D5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		399461E21E02926F00B6B0CC /* amr */ = {
 			isa = PBXGroup;
 			children = (
@@ -977,7 +952,6 @@
 		39AA48B01D22218E008647DE = {
 			isa = PBXGroup;
 			children = (
-				3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */,
 				396E65881D4320CB0046478F /* WilddogIMDemo */,
 				39AA48D81D22218E008647DE /* WilddogIMTests */,
 				39AA48E31D22218E008647DE /* WilddogIMUITests */,
@@ -1065,7 +1039,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				39BCE9B21DEEAA0600542C36 /* PBXTargetDependency */,
 			);
 			name = WilddogIMDemo;
 			productName = WilddogIM;
@@ -1156,12 +1129,6 @@
 			mainGroup = 39AA48B01D22218E008647DE;
 			productRefGroup = 39AA48BA1D22218E008647DE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3986F88B1D532B2D006BC2D5 /* Products */;
-					ProjectRef = 3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				39AA48B81D22218E008647DE /* WilddogIMDemo */,
@@ -1170,16 +1137,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = WilddogIM.framework;
-			remoteRef = 3986F88E1D532B2D006BC2D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		39AA48B71D22218E008647DE /* Resources */ = {
@@ -1551,11 +1508,6 @@
 			isa = PBXTargetDependency;
 			target = 39AA48B81D22218E008647DE /* WilddogIMDemo */;
 			targetProxy = 39AA48E11D22218E008647DE /* PBXContainerItemProxy */;
-		};
-		39BCE9B21DEEAA0600542C36 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = WilddogIM;
-			targetProxy = 39BCE9B11DEEAA0600542C36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

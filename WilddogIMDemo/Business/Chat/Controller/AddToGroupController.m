@@ -15,8 +15,7 @@
 #import "GroupInfoModel.h"
 #import "ConversationViewController.h"
 #import <SVProgressHUD.h>
-
-#import "WDGIM.h"
+#import <WilddogIM/WilddogIM.h>
 
 @interface AddToGroupController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;

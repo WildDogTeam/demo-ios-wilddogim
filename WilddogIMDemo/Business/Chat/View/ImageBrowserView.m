@@ -19,7 +19,7 @@
 #import "MsgPicModel.h"
 #import "UIResponder+addtion.h"
 #import "UIImageView+WebCache.h"
-#import "WDGIMMessage.h"
+#import <WilddogIM/WilddogIM.h>
 
 @interface ImageBrowserView() <UIScrollViewDelegate>
 

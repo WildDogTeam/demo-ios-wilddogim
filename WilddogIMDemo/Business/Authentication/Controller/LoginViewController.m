@@ -17,7 +17,7 @@
 #import <SVProgressHUD.h>
 
 #import <WilddogAuth/WilddogAuth.h>
-#import "WDGIM.h"
+#import <WilddogIM/WilddogIM.h>
 
 @interface LoginViewController () <WDGIMDelegate>
 
