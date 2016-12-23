@@ -65,28 +65,16 @@
     return roomId;
 }
 
-+ (NSString *)getOtherId:(NSString *)roomId
++ (NSString *)getOtherId:(NSArray *)members
 {
-    if (![roomId containsString:@"-"]) {
-        return roomId;
-    }
-    else if([roomId hasPrefix:@"GroupSystemRoomId"]){
-        return roomId;
-    }
-    else{
-        __block NSString * receiver = nil;
-        __block BOOL sendToSelf = YES;
-        [[roomId componentsSeparatedByString:@"-"] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (![obj isEqualToString:[Utility myUid]]) {
-                receiver = obj;
-                sendToSelf = NO;
-            }
-        }];
-        if (sendToSelf == YES) {
-            receiver = [[self class] myUid];
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:members];
+    if (arr.count == 2) {
+        if([arr containsObject:[Utility myUid]]){
+            [arr removeObject:[Utility myUid]];
         }
-        return receiver;
+        return [arr firstObject];
     }
+    return @"";
 }
 
 + (WildMsgType)getMsgType:(NSDictionary *)dic

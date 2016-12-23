@@ -28,7 +28,7 @@
         [db executeUpdate:@"INSERT INTO myTable VALUES (?)", [NSNumber numberWithInt:2]];
         [db executeUpdate:@"INSERT INTO myTable VALUES (?)", [NSNumber numberWithInt:3]];
 
-        WildIMResultSet *rs = [db executeQuery:@"select * from foo"];
+        WILIMResultSet *rs = [db executeQuery:@"select * from foo"];
         while ([rs next]) {
             //…
         }

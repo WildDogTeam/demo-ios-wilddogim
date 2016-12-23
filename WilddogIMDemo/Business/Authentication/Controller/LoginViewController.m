@@ -16,9 +16,10 @@
 #import "UserInfoDataBase.h"
 #import <SVProgressHUD.h>
 
-#import <WilddogIM/WilddogIM.h>
+#import <WilddogAuth/WilddogAuth.h>
+#import "WDGIM.h"
 
-@interface LoginViewController ()
+@interface LoginViewController () <WDGIMDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *chooseUserBtn;
@@ -72,15 +73,18 @@
 {
     [SVProgressHUD showWithStatus:@"正在登录"];
     
+    __block UserInfoModel *model = nil;
+
     [[AuthenticationService sharedInstance] loginAppService:[Utility myUid] withCompletion:^(NSError *error, id result) {
         if (!error) {
             NSString *idToken = [[result objectForKey:@"data"]objectForKey:@"token"];
             
-            //登录 Wilddog IM
-            __block UserInfoModel *model = nil;
-            [[WDGIMClient defaultClient] signInWithCustomToken:idToken completion:^(WDGIMUser * _Nullable authenticatedUser, NSError * _Nullable error) {
+            [[WDGAuth auth] signInWithCustomToken:idToken completion:^(WDGUser * _Nullable user, NSError * _Nullable error) {
                 if(!error){
                     [SVProgressHUD dismiss];
+                    
+                    //设置代理
+                    [[WDGIM im] setDelegate:self];
                     
                     [[WildIMKitSqlDataBase sharedInstance] initSqlPersistenceStorageEngineWithCacheId:@"imdemo"];
                     
@@ -101,6 +105,19 @@
             [SVProgressHUD showErrorWithStatus:@"登录失败"];
         }
     }];
+}
+
+#pragma mark - Delegate
+- (void)wilddogIM:(WDGIM *)client didRecieveMessages:(NSArray<WDGIMMessage *> *)messages
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationVCUpdate object:nil userInfo:@{@"msgs":messages}];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationListUpdate object:nil];
+}
+
+- (void)wilddogIM:(WDGIM *)client didGroupInfoChange:(NSArray<WDGIMMessageGroupTip *> *)groupTips
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationVCUpdate object:nil userInfo:@{@"msgs":groupTips}];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationListUpdate object:nil];
 }
 
 - (void)didReceiveMemoryWarning

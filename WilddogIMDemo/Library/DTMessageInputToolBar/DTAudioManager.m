@@ -8,8 +8,10 @@
 
 #import "DTAudioManager.h"
 #import <AVFoundation/AVFoundation.h>
+#import "AmrPlayer.h"
+#import "AmrRecorder.h"
 
-@interface DTAudioManager()<AVAudioPlayerDelegate>
+@interface DTAudioManager()<AVAudioPlayerDelegate, PRNAmrRecorderDelegate>
 
 @property (nonatomic, strong) AVAudioSession *session;
 @property (nonatomic, strong) AVAudioPlayer *player;
@@ -17,12 +19,15 @@
 @property (nonatomic, strong) NSURL *recordFileURL;
 @property (nonatomic, copy)   NSString *recordUrlKey;
 @property (nonatomic, copy) didPlayFinish finishBlock;
+@property (nonatomic, copy) didRecordFinish recordFinishBlock;
+@property (nonatomic, strong) AmrRecorder *amrRecorder;
+@property (nonatomic, strong) AmrPlayer *amrPlayer;
+@property (nonatomic, strong) NSString *filePath;
 
 @end
 
 
 @implementation DTAudioManager
-
 
 + (instancetype)sharedInstance
 {
@@ -30,11 +35,22 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[self alloc ] init];
+        _sharedInstance = [[self alloc] init];
         [_sharedInstance activeAudioSession];
     });
     
     return _sharedInstance;
+}
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.amrRecorder = [[AmrRecorder alloc] init];
+        self.amrRecorder.delegate = self;
+        
+        self.amrPlayer = [[AmrPlayer alloc] init];
+    }
+    return self;
 }
 
 // 开启始终以扬声器模式播放声音
@@ -59,38 +75,40 @@
     }
 }
 
-- (void)playWithData:(NSData *)data finish:(void (^)())didFinish;
+- (void)playWithData:(NSData *)data finish:(void (^)())didFinish
 {
-    self.finishBlock = didFinish;
-    if (self.player) {
-        if (self.player.isPlaying) {
-            [self.player stop];
+    if(self.amrPlayer){
+        if (self.amrPlayer.audioPlayer.isPlaying) {
+            [self.amrPlayer.audioPlayer stop];
         }
-        
-        self.player.delegate = nil;
         self.player = nil;
     }
+    NSFileManager *file = [NSFileManager defaultManager];
+    NSString *recordFile = [NSString stringWithFormat:@"%@/%@.amr", self.filePath, [[self class] uuid]];
+    BOOL success = [file createFileAtPath:recordFile contents:data attributes:nil];
+    if (success) {
+        NSLog(@"save voice data success!");
+    }else{
+        return;
+    }
     
-    NSError *playerError = nil;
-    self.player = [[AVAudioPlayer alloc] initWithData:data error:&playerError];
-    if (self.player)  {
-        self.player.delegate = self;
-        [self.player play];
-    }
-    else {
-        NSLog(@"Error creating player: %@", [playerError description]);
-    }
+    [self.amrPlayer playWithURL:[NSURL URLWithString:recordFile] finished:didFinish];
+}
+
+- (void)playWithPath:(NSString *)path finish:(void (^)())didFinish
+{
+    [self.amrPlayer playWithURL:[NSURL URLWithString:path] finished:didFinish];
 }
 
 - (void)stopPlay{
-    if (self.player) {
-        if (self.player.isPlaying) {
-            [self.player stop];
+
+    if(self.amrPlayer){
+        if (self.amrPlayer.audioPlayer.isPlaying) {
+            [self.amrPlayer.audioPlayer stop];
         }
-        
-        self.player.delegate = nil;
         self.player = nil;
     }
+    [self.amrRecorder stop];
 }
 
 + (NSString *)uuid{
@@ -103,63 +121,35 @@
     
 }
 
-- (BOOL)initRecord{
-    
-    //录音设置
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc]init];
-    //设置录音格式  AVFormatIDKey==kAudioFormatLinearPCM
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
-    //设置录音采样率(Hz) 如：AVSampleRateKey==8000/44100/96000（影响音频的质量）
-    [recordSetting setValue:[NSNumber numberWithFloat:44100] forKey:AVSampleRateKey];
-    //录音通道数  1 或 2
-    [recordSetting setValue:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-    //线性采样位数  8、16、24、32
-    [recordSetting setValue:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-    //录音的质量
-    [recordSetting setValue:[NSNumber numberWithInt:AVAudioQualityHigh] forKey:AVEncoderAudioQualityKey];
-    NSString *path = [NSString stringWithFormat:@"%@/WildIM/", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]];
-    NSFileManager *file = [[NSFileManager alloc] init];
+- (BOOL)initRecord
+{
+    NSString *path = [NSString stringWithFormat:@"%@/WildIMDemo/", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]];
+    NSFileManager *file = [NSFileManager defaultManager];
     if(![file fileExistsAtPath:path]){
         NSError *createError = nil;
         [file createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&createError];
         if (createError) {
             NSLog(@"create file dir error %@",createError);
+            return NO;
         }
     }
-    NSString *strUrl = [NSString stringWithFormat:@"%@/%@.wav", path, [[self class] uuid]];
-    NSURL *url = [NSURL fileURLWithPath:strUrl];
-    self.recordUrlKey = strUrl;
-    //    self.audioRecord.filePath = strUrl;
-    
-    NSError *error;
-    //初始化
-    _recorder = [[AVAudioRecorder alloc]initWithURL:url settings:recordSetting error:&error];
-    //开启音量检测
-    self.recorder.meteringEnabled = YES;
-    
-    
-    if ([self.recorder prepareToRecord]){
-        return YES;
-    }
-    
-//    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(volumeMeters:) userInfo:nil repeats:YES];
-    
-    return NO;
+    self.filePath = path;
+    return YES;
 }
 
 - (BOOL)startRecord
 {
-    return [self.recorder record];
+    NSString *recordFile = [NSString stringWithFormat:@"%@/%@.amr", self.filePath, [[self class] uuid]];
+    self.recordUrlKey = recordFile;
+    //[recorder setSpeakMode:NO];
+    [self.amrRecorder recordWithURL:[NSURL URLWithString:recordFile]];
+    return YES;
 }
 
 - (void)stopRecordWithBlock:(didRecordFinish)block
 {
-    NSTimeInterval duration = self.recorder.currentTime;
-    [self.recorder stop];
-    
-    if (block) {
-        block(self.recordUrlKey, (NSInteger)(round(duration)));
-    }
+    [self.amrRecorder stop];
+    self.recordFinishBlock = block;
 }
 
 
@@ -181,5 +171,20 @@
     if (self.finishBlock) {
         self.finishBlock();
     }
+}
+
+#pragma mark - PRNAmrRecorderDelegate
+
+- (void)recorder:(AmrRecorder *)aRecorder didRecordWithFile:(PRNAmrFileInfo *)fileInfo
+{
+    if (self.recordFinishBlock) {
+        NSString *fileKey = [fileInfo.fileUrl absoluteString];
+        self.recordFinishBlock(fileKey, fileInfo.duration);
+    }
+}
+
+- (void)recorder:(AmrRecorder *)aRecorder didPickSpeakPower:(float)power
+{
+    [NSString stringWithFormat:@"%f", power];
 }
 @end

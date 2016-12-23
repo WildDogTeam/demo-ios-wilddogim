@@ -57,7 +57,7 @@
  
  @param aDB A `<WildIMKitDatabase>` to be used
  
- @return A `WildIMResultSet` on success; `nil` on failure
+ @return A `WILIMResultSet` on success; `nil` on failure
  */
 
 + (instancetype)resultSetWithStatement:(WildIMKitStatement *)statement usingParentDatabase:(WildIMKitDatabase*)aDB;

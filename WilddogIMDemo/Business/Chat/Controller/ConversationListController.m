@@ -24,11 +24,11 @@
 #import <SVProgressHUD.h>
 
 #import <WilddogIM/WilddogIM.h>
+#import <WilddogAuth/WilddogAuth.h>
 
 static ConversationListController *gCurrentConversationListController;
 
 @interface ConversationListController ()<UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) WDGIMClient *wildClient;
 @property (nonatomic, retain) UserInfoModel *userModel;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray* recentChatList;
@@ -65,7 +65,6 @@ static ConversationListController *gCurrentConversationListController;
     
     self.title = @"消息";
     self.recentChatList = [NSMutableArray arrayWithCapacity:50];
-    self.wildClient = [WDGIMClient defaultClient];
 
     UIView *view = [UIView new];
     view.backgroundColor = [UIColor clearColor];
@@ -90,7 +89,11 @@ static ConversationListController *gCurrentConversationListController;
     }];
     
     UIAlertAction *corfim = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[WDGIMClient defaultClient] signOut:nil];
+        [WDGIMNotify unbindDeviceTokenWithCompletion:^(NSError * _Nullable error) {
+            if (!error) {
+                [[WDGAuth auth] signOut:nil];
+            }
+        }];
         [self presentLoginVC];
     }];
     [alertController addAction:cancel];
@@ -133,7 +136,7 @@ static ConversationListController *gCurrentConversationListController;
 {
     [self.recentChatList removeAllObjects];
     
-    NSArray *conversations = [self.wildClient getConversations];
+    NSArray *conversations = [[WDGIM im] getConversations];
     int cnt = (int)[conversations count];
     for (int index = 0; index < cnt; index++) {
         WDGIMConversation *conversation = [conversations objectAtIndex:index];
@@ -155,7 +158,7 @@ static ConversationListController *gCurrentConversationListController;
     model.conversationId = conversation.conversationId;
 
     int type = MsgType_User;
-    if ([conversation.conversationId containsString:@"-"]) {
+    if (conversation.members.count == 2) {
         type = MsgType_User;
     }else{
         type = MsgType_Group;
@@ -163,13 +166,12 @@ static ConversationListController *gCurrentConversationListController;
     model.type = type;
     
     if (model.type == MsgType_User) {
-        UserInfoModel *user = [[UserInfoDataBase sharedInstance] getUserInfo:[Utility getOtherId:conversation.conversationId]];
+        UserInfoModel *user = [[UserInfoDataBase sharedInstance] getUserInfo:[Utility getOtherId:conversation.members]];
         model.title = user.name;
         model.avatar = user.avatar;
         model.avatarImageView = nil;
         
     }else if(model.type == MsgType_Group){
-        
         [conversation.members enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             UserInfoModel *user = [[UserInfoDataBase sharedInstance] getUserInfo:obj];
             [model.groupNames addObject:user.name];
@@ -263,7 +265,7 @@ static ConversationListController *gCurrentConversationListController;
     NSLog(@"%s TableCell select: section:%ld index:%ld", __FILE__,  (long)indexPath.section, (long)indexPath.row);
     ConversationListModel *model = (ConversationListModel *)[self.recentChatList objectAtIndex:indexPath.row];
     ConversationViewController *chatCntler = [[ConversationViewController alloc]init];
-    chatCntler.wildConversation = [self.wildClient getConversation:model.conversationId];
+    chatCntler.wildConversation = [[WDGIM im] getConversation:model.conversationId];
     chatCntler.groupName = [self.recentChatList[indexPath.row] title];
     chatCntler.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chatCntler animated:YES];

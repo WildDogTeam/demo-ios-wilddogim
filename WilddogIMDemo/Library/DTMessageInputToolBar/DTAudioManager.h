@@ -18,6 +18,8 @@ typedef void(^didRecordFinish)(NSString *urlKey, NSInteger time);
 
 - (void)playWithData:(NSData *)data finish:(didPlayFinish) didFinish;
 
+- (void)playWithPath:(NSString *)path finish:(void (^)())didFinish;
+
 - (void)stopPlay;
 
 - (BOOL)startRecord;

@@ -15,7 +15,6 @@ static const NSString *Conversation = @"Conversation";
 static const NSString *Message = @"Message";
 static const NSString *GroupInfo = @"GroupInfo";
 static const NSString *UserInfo = @"UserInfo";
-static const NSString *Elem = @"Elem";
 static const NSString *BlackList = @"BlackList";
 
 @implementation WildIMKitSqlDataBase

@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, WildMsgType){
 
 + (NSString *)getRoomId:(int)type conversationId:(NSString *)conversationId;
 
-+ (NSString *)getOtherId:(NSString *)roomId;
++ (NSString *)getOtherId:(NSArray *)members;
 
 + (WildMsgType)getMsgType:(NSDictionary *)dic;
 

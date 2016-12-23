@@ -136,7 +136,7 @@
  - `rootpage` - The page number of the root b-tree page for tables and indices
  - `sql` - The SQL that created the entity
 
- @return `WildIMResultSet` of schema; `nil` on error.
+ @return `WILIMResultSet` of schema; `nil` on error.
  
  @see [SQLite File Format](http://www.sqlite.org/fileformat.html)
  */
@@ -160,7 +160,7 @@
 
  @param tableName The name of the table for whom the schema will be returned.
  
- @return `WildIMResultSet` of schema; `nil` on error.
+ @return `WILIMResultSet` of schema; `nil` on error.
  
  @see [table_info](http://www.sqlite.org/pragma.html#pragma_table_info)
  */

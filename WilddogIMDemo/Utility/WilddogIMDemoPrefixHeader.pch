@@ -12,10 +12,14 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Utility.h"
 #import "MyUIDefine.h"
 #import "WDGDemoConstDefine.h"
 #import "DTUtility.h"
 #import "UIViewAdditions.h"
+#endif
 
 #endif /* WilddogIMPrefixHeader_pch */

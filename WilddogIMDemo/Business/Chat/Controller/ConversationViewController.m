@@ -103,7 +103,7 @@ static ConversationViewController *gCurrentConversationViewController;
     if(self.wildConversation){
         _conversation = self.wildConversation;
         if ([_conversation.members count] == 2) {
-            title = [[[UserInfoDataBase sharedInstance] getUserInfo:[Utility getOtherId:_conversation.conversationId]] name];
+            title = [[[UserInfoDataBase sharedInstance] getUserInfo:[Utility getOtherId:_conversation.members]] name];
         }else{
             if (self.groupName.length == 0) {
                 NSMutableArray *array = [NSMutableArray new];
@@ -347,7 +347,6 @@ static ConversationViewController *gCurrentConversationViewController;
         model.inMsg = NO;
         model.textMsg = text;
         model.fromUserId = [Utility myUid];
-        model.toUserId = [Utility getOtherId:_conversation.conversationId];
         model.conversationId = _conversation.conversationId;
         model.sendTime = [NSDate date];
         model.time = [NSString stringWithFormat:@"%d",(int)[[NSDate date]timeIntervalSince1970]*1000];

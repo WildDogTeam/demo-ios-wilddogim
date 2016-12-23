@@ -11,7 +11,7 @@
 #import "MsgBaseCell.h"
 #import "DTAudioManager.h"
 
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIMMessage.h"
 
 @interface ChatAudioCell ()
 
@@ -224,30 +224,23 @@
 - (void)playAudio
 {
     MsgAudioModel* model = (MsgAudioModel *)self.model;
-    WDGIMMessageVoice *msgVoice = (WDGIMMessageVoice *)self.model.msg;
+    WDGIMMessageVoice *msgVoice = (WDGIMMessageVoice *)model.msg;
     
     if (model.isPlaying) {
         
         __weak ChatAudioCell * weakself = self;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
+
             NSData *voiceData;
-            if (model.data == nil) {
-                if (msgVoice.filePath.length == 0) {
-                    voiceData = [NSData dataWithContentsOfURL:msgVoice.url];
-                }else{
-                    voiceData = [NSData dataWithContentsOfFile:msgVoice.filePath];
-                }
-            }else{
-                voiceData = model.data;
+            if (msgVoice.filePath.length == 0) {
+                voiceData = [NSData dataWithContentsOfURL:msgVoice.url];
             }
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 if (voiceData == nil) {
                     [weakself.audioImg startAnimating];
-                    [[DTAudioManager sharedInstance] playWithData:model.data finish:^(){
+                    [[DTAudioManager sharedInstance] playWithPath:msgVoice.filePath finish:^{
                         model.isPlaying = NO;
                         [weakself.audioImg stopAnimating];
                     }];
@@ -266,10 +259,6 @@
     else{
         [[DTAudioManager sharedInstance] stopPlay];
         [self.audioImg stopAnimating];
-        //        __weak typeof(self) weakself = self;
-        //        [[WildAudioManager sharedInstance] playWithData:model.data finish:^(){
-        //            [weakself.audioImg stopAnimating];
-        //        }];
     }
 }
 

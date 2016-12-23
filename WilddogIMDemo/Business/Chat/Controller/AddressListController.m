@@ -12,9 +12,9 @@
 #import "UIImageView+WebCache.h"
 #import "UserInfoModel.h"
 #import "UserInfoDataBase.h"
+#import "WDGIM.h"
 #import "AuthenticationService.h"
 #import <SVProgressHUD.h>
-#import <WilddogIM/WilddogIM.h>
 
 @interface AddressListController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -122,7 +122,7 @@ NSComparator cmptr = ^(id obj1, id obj2)
         vc.hidesBottomBarWhenPushed = YES;
         UserInfoModel *passModel = [self.friendList objectAtIndex:indexPath.row];
         
-        WDGIMClient *client = [WDGIMClient defaultClient];
+        WDGIM *client = [WDGIM im];
         if (passModel) {
             [client newConversationWithMembers:@[passModel.userId] completion:^(WDGIMConversation * _Nullable conversation, NSError *__autoreleasing  _Nullable * _Nullable error) {
                 vc.wildConversation = conversation;

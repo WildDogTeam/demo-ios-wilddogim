@@ -221,9 +221,7 @@
             showDetail = [showDetail stringByAppendingString:[subString substringWithRange:NSMakeRange(i, 1)]];
         }
     }
-    NSLog(@"showdetail length == %lu",showDetail.length);
     showDetail = [showDetail stringByAppendingString:@"..."];
-    NSLog(@"showdetail length1 == %lu",showDetail.length);
     return showDetail;
 }
 

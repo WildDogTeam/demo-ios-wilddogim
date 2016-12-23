@@ -16,10 +16,9 @@
 #import "ConversationViewController.h"
 #import <SVProgressHUD.h>
 
-#import <WilddogIM/WilddogIM.h>
+#import "WDGIM.h"
 
 @interface AddToGroupController ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic, strong) WDGIMClient *wildClient;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) NSMutableArray *selectedArray;
@@ -63,7 +62,6 @@
     
     self.dataArray = [[NSMutableArray alloc]init];
     self.selectedArray = [[NSMutableArray alloc]init];
-    self.wildClient = [[WDGIMClient alloc] init];
     
     NSArray *users = [[UserInfoDataBase sharedInstance]getMyAllFriends];
     for (UserInfoModel *info in users) {
@@ -86,7 +84,7 @@
     }
     
     [SVProgressHUD showWithStatus:@"正在创建会话"];
-    [self.wildClient newConversationWithMembers:userArray completion:^(WDGIMConversation * _Nullable conversation, NSError *__autoreleasing  _Nullable * _Nullable error) {
+    [[WDGIM im] newConversationWithMembers:userArray completion:^(WDGIMConversation * _Nullable conversation, NSError *__autoreleasing  _Nullable * _Nullable error) {
         [SVProgressHUD dismiss];
         if (!error) {
             ConversationViewController *vc = [[ConversationViewController alloc]init];

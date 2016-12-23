@@ -19,9 +19,10 @@
 #import <WilddogIM/WilddogIM.h>
 
 #define WilddogAppID @"wdimdemo"
+#define WilddogAPPRootUrl @"https://wdimdemo.wilddogio.com"
 
 @import Wilddog;
-@interface AppDelegate () <UISplitViewControllerDelegate, WDGIMClientDelegate>
+@interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
 
@@ -31,8 +32,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    //使用第一步
-    [WDGIMClient clientWithAppID:WilddogAppID delegate:self];
+    //初始化
+    WDGOptions *options = [[WDGOptions alloc] initWithSyncURL:WilddogAPPRootUrl];
+    [WDGApp configureWithOptions:options];
+    
     
     [[NSUserDefaults standardUserDefaults] setObject:WilddogAppID forKey:kWildIMDemoUserDefaultWilddogAppID];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -77,7 +80,7 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    [[WDGIMClient defaultClient] updateRemoteNotificationDeviceToken:deviceToken error:nil];
+    [WDGIMNotify updateRemoteNotificationDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -95,29 +98,16 @@
     }
 }
 
-#pragma mark - Delegate
-- (void)wilddogIMClient:(WDGIMClient *)client didRecieveMessages:(NSArray<WDGIMMessage *> *)messages
-{
-    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationVCUpdate object:nil userInfo:@{@"msgs":messages}];
-    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationListUpdate object:nil];
-}
-
-- (void)wilddogIMClient:(WDGIMClient *)client didGroupInfoChange:(NSArray<WDGIMMessageGroupTip *> *)groupTips
-{
-    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationVCUpdate object:nil userInfo:@{@"msgs":groupTips}];
-    [[NSNotificationCenter defaultCenter]postNotificationName:kWildNotificationConversationListUpdate object:nil];
-}
-
 - (void)applicationWillResignActive:(UIApplication *)application {
     
-    [[WDGIMClient defaultClient] connectWithCompletion:^(BOOL success, NSError * _Nullable error) {
+    [[WDGIM im] connectWithCompletion:^(BOOL success, NSError * _Nullable error) {
         
     }];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
         
-    [[WDGIMClient defaultClient] disconnect];
+    [[WDGIM im] disconnect];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

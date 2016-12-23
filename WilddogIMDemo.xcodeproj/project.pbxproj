@@ -174,16 +174,26 @@
 		396E68F31D43349D0046478F /* WildIMKitResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 396E68EE1D43349D0046478F /* WildIMKitResultSet.m */; };
 		396E68F61D4335000046478F /* WildIMKitSqlDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 396E68F51D4335000046478F /* WildIMKitSqlDataBase.m */; };
 		396E68F91D433A440046478F /* IMKitHttpUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 396E68F81D433A440046478F /* IMKitHttpUtil.m */; };
+		399461EA1E02927000B6B0CC /* amr_wav_converter.c in Sources */ = {isa = PBXBuildFile; fileRef = 399461E31E02926F00B6B0CC /* amr_wav_converter.c */; };
+		399461EB1E02927000B6B0CC /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 399461E51E02926F00B6B0CC /* libopencore-amrnb.a */; };
+		399461EC1E02927000B6B0CC /* AmrPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 399461E71E02926F00B6B0CC /* AmrPlayer.m */; };
+		399461ED1E02927000B6B0CC /* AmrRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 399461E91E02926F00B6B0CC /* AmrRecorder.m */; };
 		39A0A4EB1DE9BCCE00D13535 /* UIResponder+addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A0A4EA1DE9BCCE00D13535 /* UIResponder+addtion.m */; };
 		39A0A4EE1DE9BDB900D13535 /* ImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A0A4ED1DE9BDB900D13535 /* ImageBrowserView.m */; };
 		39AA48DA1D22218E008647DE /* WilddogIMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA48D91D22218E008647DE /* WilddogIMTests.m */; };
 		39AA48E51D22218E008647DE /* WilddogIMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA48E41D22218E008647DE /* WilddogIMUITests.m */; };
-		94192AF34B2CD437D2229344 /* libPods-WilddogIMDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE279C33345357D2A4064F43 /* libPods-WilddogIMDemoTests.a */; };
-		D2FF1A0DC948878E86E01511 /* libPods-WilddogIMDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB330227FDAE8A49EA9199BA /* libPods-WilddogIMDemoUITests.a */; };
+		39BCE9B01DEEA9FF00542C36 /* WilddogIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */; };
 		D79CE56451176C8767909CB2 /* libPods-WilddogIMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E92FAC9158F22CFC5B61B5C /* libPods-WilddogIMDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3986F88E1D532B2D006BC2D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 396E67981D4322DA0046478F;
+			remoteInfo = WilddogIM;
+		};
 		39AA48D61D22218E008647DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 39AA48B11D22218E008647DE /* Project object */;
@@ -196,6 +206,13 @@
 			containerPortal = 39AA48B11D22218E008647DE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 39AA48B81D22218E008647DE;
+			remoteInfo = WilddogIM;
+		};
+		39BCE9B11DEEAA0600542C36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 396E67971D4322DA0046478F;
 			remoteInfo = WilddogIM;
 		};
 /* End PBXContainerItemProxy section */
@@ -435,6 +452,17 @@
 		396E68F71D433A440046478F /* IMKitHttpUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMKitHttpUtil.h; sourceTree = "<group>"; };
 		396E68F81D433A440046478F /* IMKitHttpUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMKitHttpUtil.m; sourceTree = "<group>"; };
 		398174891D40FBD40056156D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WilddogIM.xcodeproj; path = WilddogIM/WilddogIM.xcodeproj; sourceTree = "<group>"; };
+		399461E31E02926F00B6B0CC /* amr_wav_converter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amr_wav_converter.c; sourceTree = "<group>"; };
+		399461E41E02926F00B6B0CC /* amr_wav_converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amr_wav_converter.h; sourceTree = "<group>"; };
+		399461E51E02926F00B6B0CC /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		399461E61E02926F00B6B0CC /* AmrPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmrPlayer.h; sourceTree = "<group>"; };
+		399461E71E02926F00B6B0CC /* AmrPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmrPlayer.m; sourceTree = "<group>"; };
+		399461E81E02926F00B6B0CC /* AmrRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmrRecorder.h; sourceTree = "<group>"; };
+		399461E91E02926F00B6B0CC /* AmrRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmrRecorder.m; sourceTree = "<group>"; };
+		399461EE1E02949D00B6B0CC /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		399461F01E0294A800B6B0CC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		399461F21E0294B300B6B0CC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		39A0A4E91DE9BCCE00D13535 /* UIResponder+addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+addtion.h"; sourceTree = "<group>"; };
 		39A0A4EA1DE9BCCE00D13535 /* UIResponder+addtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+addtion.m"; sourceTree = "<group>"; };
 		39A0A4EC1DE9BDB900D13535 /* ImageBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBrowserView.h; sourceTree = "<group>"; };
@@ -449,15 +477,9 @@
 		39BB06371DAB80E70078044F /* WilddogIMDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WilddogIMDemo.entitlements; sourceTree = "<group>"; };
 		39D67AF11DED6ACA00928921 /* MyMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMenuItem.h; sourceTree = "<group>"; };
 		440C57E96E076B9F0F71A2D6 /* Pods-WilddogIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIM/Pods-WilddogIM.debug.xcconfig"; sourceTree = "<group>"; };
-		4D6DD48713B1D24B2401C268 /* Pods-WilddogIMDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F87FB2B44E54E3303F4DD7E /* Pods-WilddogIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIM/Pods-WilddogIM.release.xcconfig"; sourceTree = "<group>"; };
-		66F131B75DF4B9CA53AC859F /* Pods-WilddogIMDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		685F22A1AD0D19F105816162 /* Pods-WilddogIMDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A18169C406C77A96A6615B /* Pods-WilddogIMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemo/Pods-WilddogIMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9E92FAC9158F22CFC5B61B5C /* libPods-WilddogIMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogIMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE279C33345357D2A4064F43 /* libPods-WilddogIMDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogIMDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB330227FDAE8A49EA9199BA /* libPods-WilddogIMDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogIMDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7CA88E13BEE3EDB28514053 /* Pods-WilddogIMDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +487,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BCE9B01DEEA9FF00542C36 /* WilddogIM.framework in Frameworks */,
+				399461EB1E02927000B6B0CC /* libopencore-amrnb.a in Frameworks */,
 				D79CE56451176C8767909CB2 /* libPods-WilddogIMDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +497,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94192AF34B2CD437D2229344 /* libPods-WilddogIMDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +504,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FF1A0DC948878E86E01511 /* libPods-WilddogIMDemoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +747,7 @@
 		396E661F1D4320CB0046478F /* DTMessageInputToolBar */ = {
 			isa = PBXGroup;
 			children = (
+				399461E21E02926F00B6B0CC /* amr */,
 				396E66201D4320CB0046478F /* DTAudioManager.h */,
 				396E66211D4320CB0046478F /* DTAudioManager.m */,
 				396E66221D4320CB0046478F /* DTEmojiView.h */,
@@ -919,9 +942,32 @@
 			path = WildIMKitDB;
 			sourceTree = "<group>";
 		};
+		3986F88B1D532B2D006BC2D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		399461E21E02926F00B6B0CC /* amr */ = {
+			isa = PBXGroup;
+			children = (
+				399461E31E02926F00B6B0CC /* amr_wav_converter.c */,
+				399461E41E02926F00B6B0CC /* amr_wav_converter.h */,
+				399461E51E02926F00B6B0CC /* libopencore-amrnb.a */,
+				399461E61E02926F00B6B0CC /* AmrPlayer.h */,
+				399461E71E02926F00B6B0CC /* AmrPlayer.m */,
+				399461E81E02926F00B6B0CC /* AmrRecorder.h */,
+				399461E91E02926F00B6B0CC /* AmrRecorder.m */,
+			);
+			path = amr;
+			sourceTree = "<group>";
+		};
 		39AA48B01D22218E008647DE = {
 			isa = PBXGroup;
 			children = (
+				3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */,
 				396E65881D4320CB0046478F /* WilddogIMDemo */,
 				39AA48D81D22218E008647DE /* WilddogIMTests */,
 				39AA48E31D22218E008647DE /* WilddogIMUITests */,
@@ -962,14 +1008,15 @@
 		5D46C5A1C82A3AC6E2138841 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				399461F21E0294B300B6B0CC /* AVFoundation.framework */,
+				399461F01E0294A800B6B0CC /* AudioToolbox.framework */,
+				399461EE1E02949D00B6B0CC /* CoreAudio.framework */,
 				39246EF61DAB712C00433C87 /* libsqlite3.tbd */,
 				39246EF41DAB712200433C87 /* JavaScriptCore.framework */,
 				39246EF01DAB711000433C87 /* Wilddog.framework */,
 				398174891D40FBD40056156D /* Security.framework */,
 				2B083546945266AA1BC9A404 /* libPods-WilddogIM.a */,
 				9E92FAC9158F22CFC5B61B5C /* libPods-WilddogIMDemo.a */,
-				CE279C33345357D2A4064F43 /* libPods-WilddogIMDemoTests.a */,
-				DB330227FDAE8A49EA9199BA /* libPods-WilddogIMDemoUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -981,10 +1028,6 @@
 				5F87FB2B44E54E3303F4DD7E /* Pods-WilddogIM.release.xcconfig */,
 				16F8053624B7E51B7F7D090A /* Pods-WilddogIMDemo.debug.xcconfig */,
 				99A18169C406C77A96A6615B /* Pods-WilddogIMDemo.release.xcconfig */,
-				F7CA88E13BEE3EDB28514053 /* Pods-WilddogIMDemoTests.debug.xcconfig */,
-				66F131B75DF4B9CA53AC859F /* Pods-WilddogIMDemoTests.release.xcconfig */,
-				4D6DD48713B1D24B2401C268 /* Pods-WilddogIMDemoUITests.debug.xcconfig */,
-				685F22A1AD0D19F105816162 /* Pods-WilddogIMDemoUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1006,6 +1049,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				39BCE9B21DEEAA0600542C36 /* PBXTargetDependency */,
 			);
 			name = WilddogIMDemo;
 			productName = WilddogIM;
@@ -1016,12 +1060,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39AA48EC1D22218E008647DE /* Build configuration list for PBXNativeTarget "WilddogIMDemoTests" */;
 			buildPhases = (
-				14DEE2201420F08C3496F899 /* [CP] Check Pods Manifest.lock */,
 				39AA48D11D22218E008647DE /* Sources */,
 				39AA48D21D22218E008647DE /* Frameworks */,
 				39AA48D31D22218E008647DE /* Resources */,
-				3288891580C8C55415AC8D73 /* [CP] Embed Pods Frameworks */,
-				261940C86A5B00017D84956B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1037,12 +1078,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39AA48EF1D22218E008647DE /* Build configuration list for PBXNativeTarget "WilddogIMDemoUITests" */;
 			buildPhases = (
-				BB65FB7CB510FC3C46E2E63B /* [CP] Check Pods Manifest.lock */,
 				39AA48DC1D22218E008647DE /* Sources */,
 				39AA48DD1D22218E008647DE /* Frameworks */,
 				39AA48DE1D22218E008647DE /* Resources */,
-				D7F74416A70E82FA820AD9CF /* [CP] Embed Pods Frameworks */,
-				B7A1811174C7C745E944C556 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1096,6 +1134,12 @@
 			mainGroup = 39AA48B01D22218E008647DE;
 			productRefGroup = 39AA48BA1D22218E008647DE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3986F88B1D532B2D006BC2D5 /* Products */;
+					ProjectRef = 3986F88A1D532B2D006BC2D5 /* WilddogIM.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				39AA48B81D22218E008647DE /* WilddogIMDemo */,
@@ -1104,6 +1148,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WilddogIM.framework;
+			remoteRef = 3986F88E1D532B2D006BC2D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		39AA48B71D22218E008647DE /* Resources */ = {
@@ -1256,51 +1310,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemo/Pods-WilddogIMDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		14DEE2201420F08C3496F899 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		261940C86A5B00017D84956B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3288891580C8C55415AC8D73 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3F83D06EC17CABE0DA6ADF55 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1314,51 +1323,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemo/Pods-WilddogIMDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B7A1811174C7C745E944C556 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB65FB7CB510FC3C46E2E63B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D7F74416A70E82FA820AD9CF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDA9B693DA7D42D5B14334EE /* [CP] Check Pods Manifest.lock */ = {
@@ -1399,6 +1363,7 @@
 				391EF94D1DE70E4300D4049C /* StitchingImage.m in Sources */,
 				396E67871D4320CB0046478F /* UIViewAdditions.m in Sources */,
 				396E68F11D43349D0046478F /* WildIMKitDatabasePool.m in Sources */,
+				399461ED1E02927000B6B0CC /* AmrRecorder.m in Sources */,
 				396E66EA1D4320CB0046478F /* ChatAudioCell.m in Sources */,
 				396E66CD1D4320CB0046478F /* BaseViewController.m in Sources */,
 				396E67851D4320CB0046478F /* UAProgressView.m in Sources */,
@@ -1413,6 +1378,7 @@
 				396E66D51D4320CB0046478F /* AddressListController.m in Sources */,
 				396E67861D4320CB0046478F /* UIImage+fixOrientation.m in Sources */,
 				396E67101D4320CB0046478F /* DTTextView.m in Sources */,
+				399461EA1E02927000B6B0CC /* amr_wav_converter.c in Sources */,
 				396E66D41D4320CB0046478F /* AuthenticationService.m in Sources */,
 				396E66DD1D4320CB0046478F /* ImageViewController.m in Sources */,
 				396E66E11D4320CB0046478F /* GroupInfoModel.m in Sources */,
@@ -1420,6 +1386,7 @@
 				396E66EF1D4320CB0046478F /* ConversationListCell.m in Sources */,
 				396E678B1D4320CB0046478F /* WildTimeFormat.m in Sources */,
 				396E68F21D43349D0046478F /* WildIMKitDatabaseQueue.m in Sources */,
+				399461EC1E02927000B6B0CC /* AmrPlayer.m in Sources */,
 				396E67471D4320CB0046478F /* main.m in Sources */,
 				396E67091D4320CB0046478F /* DTAudioManager.m in Sources */,
 				396E66CB1D4320CB0046478F /* BaseModel.m in Sources */,
@@ -1472,6 +1439,11 @@
 			isa = PBXTargetDependency;
 			target = 39AA48B81D22218E008647DE /* WilddogIMDemo */;
 			targetProxy = 39AA48E11D22218E008647DE /* PBXContainerItemProxy */;
+		};
+		39BCE9B21DEEAA0600542C36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WilddogIM;
+			targetProxy = 39BCE9B11DEEAA0600542C36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1623,6 +1595,10 @@
 				INFOPLIST_FILE = WilddogIMDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WilddogIMDemo/Library/DTMessageInputToolBar/amr",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WilddogIM;
 				PRODUCT_NAME = WilddogIMDemo;
 				PROVISIONING_PROFILE = "";
@@ -1655,6 +1631,10 @@
 				INFOPLIST_FILE = WilddogIMDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WilddogIMDemo/Library/DTMessageInputToolBar/amr",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WilddogIM;
 				PRODUCT_NAME = WilddogIMDemo;
 				PROVISIONING_PROFILE = "";
@@ -1664,7 +1644,6 @@
 		};
 		39AA48ED1D22218E008647DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7CA88E13BEE3EDB28514053 /* Pods-WilddogIMDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -1678,7 +1657,6 @@
 		};
 		39AA48EE1D22218E008647DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66F131B75DF4B9CA53AC859F /* Pods-WilddogIMDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WilddogIMTests/Info.plist;
@@ -1691,7 +1669,6 @@
 		};
 		39AA48F01D22218E008647DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D6DD48713B1D24B2401C268 /* Pods-WilddogIMDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WilddogIMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1705,7 +1682,6 @@
 		};
 		39AA48F11D22218E008647DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 685F22A1AD0D19F105816162 /* Pods-WilddogIMDemoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WilddogIMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
