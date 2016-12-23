@@ -182,7 +182,9 @@
 		39A0A4EE1DE9BDB900D13535 /* ImageBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A0A4ED1DE9BDB900D13535 /* ImageBrowserView.m */; };
 		39AA48DA1D22218E008647DE /* WilddogIMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA48D91D22218E008647DE /* WilddogIMTests.m */; };
 		39AA48E51D22218E008647DE /* WilddogIMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA48E41D22218E008647DE /* WilddogIMUITests.m */; };
-		39BCE9B01DEEA9FF00542C36 /* WilddogIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */; };
+		39BCE9B01DEEA9FF00542C36 /* ReferenceProxy in Frameworks */ = {isa = PBXBuildFile; fileRef = 3986F88F1D532B2D006BC2D5 /* WilddogIM.framework */; };
+		B661429142D98843E37AAC06 /* libPods-WilddogIMDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 436CCAB727516380F16ABAB4 /* libPods-WilddogIMDemoUITests.a */; };
+		B8D0BB22C5D3153AE15B56EC /* libPods-WilddogIMDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A345288FE06C2DF62F41EA /* libPods-WilddogIMDemoTests.a */; };
 		D79CE56451176C8767909CB2 /* libPods-WilddogIMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E92FAC9158F22CFC5B61B5C /* libPods-WilddogIMDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -218,6 +220,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03B9D1A9FEC365EA6E0A1630 /* Pods-WilddogIMDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		16F8053624B7E51B7F7D090A /* Pods-WilddogIMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemo/Pods-WilddogIMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		2B083546945266AA1BC9A404 /* libPods-WilddogIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogIM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		391EF94B1DE70E4300D4049C /* StitchingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StitchingImage.h; sourceTree = "<group>"; };
@@ -476,10 +479,15 @@
 		39AA48E61D22218E008647DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39BB06371DAB80E70078044F /* WilddogIMDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WilddogIMDemo.entitlements; sourceTree = "<group>"; };
 		39D67AF11DED6ACA00928921 /* MyMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMenuItem.h; sourceTree = "<group>"; };
+		41A345288FE06C2DF62F41EA /* libPods-WilddogIMDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogIMDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		436CCAB727516380F16ABAB4 /* libPods-WilddogIMDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogIMDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440C57E96E076B9F0F71A2D6 /* Pods-WilddogIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIM/Pods-WilddogIM.debug.xcconfig"; sourceTree = "<group>"; };
+		59C3647452EAD34DBCC5C097 /* Pods-WilddogIMDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F87FB2B44E54E3303F4DD7E /* Pods-WilddogIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIM/Pods-WilddogIM.release.xcconfig"; sourceTree = "<group>"; };
+		928AAC59209D1FEA91AB2405 /* Pods-WilddogIMDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99A18169C406C77A96A6615B /* Pods-WilddogIMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemo/Pods-WilddogIMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9E92FAC9158F22CFC5B61B5C /* libPods-WilddogIMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogIMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF5790031B20CCCCC5E8B73D /* Pods-WilddogIMDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogIMDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,7 +495,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39BCE9B01DEEA9FF00542C36 /* WilddogIM.framework in Frameworks */,
+				39BCE9B01DEEA9FF00542C36 /* ReferenceProxy in Frameworks */,
 				399461EB1E02927000B6B0CC /* libopencore-amrnb.a in Frameworks */,
 				D79CE56451176C8767909CB2 /* libPods-WilddogIMDemo.a in Frameworks */,
 			);
@@ -497,6 +505,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D0BB22C5D3153AE15B56EC /* libPods-WilddogIMDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +513,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B661429142D98843E37AAC06 /* libPods-WilddogIMDemoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1027,8 @@
 				398174891D40FBD40056156D /* Security.framework */,
 				2B083546945266AA1BC9A404 /* libPods-WilddogIM.a */,
 				9E92FAC9158F22CFC5B61B5C /* libPods-WilddogIMDemo.a */,
+				41A345288FE06C2DF62F41EA /* libPods-WilddogIMDemoTests.a */,
+				436CCAB727516380F16ABAB4 /* libPods-WilddogIMDemoUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1028,6 +1040,10 @@
 				5F87FB2B44E54E3303F4DD7E /* Pods-WilddogIM.release.xcconfig */,
 				16F8053624B7E51B7F7D090A /* Pods-WilddogIMDemo.debug.xcconfig */,
 				99A18169C406C77A96A6615B /* Pods-WilddogIMDemo.release.xcconfig */,
+				EF5790031B20CCCCC5E8B73D /* Pods-WilddogIMDemoTests.debug.xcconfig */,
+				03B9D1A9FEC365EA6E0A1630 /* Pods-WilddogIMDemoTests.release.xcconfig */,
+				59C3647452EAD34DBCC5C097 /* Pods-WilddogIMDemoUITests.debug.xcconfig */,
+				928AAC59209D1FEA91AB2405 /* Pods-WilddogIMDemoUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1060,9 +1076,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39AA48EC1D22218E008647DE /* Build configuration list for PBXNativeTarget "WilddogIMDemoTests" */;
 			buildPhases = (
+				0036C2CE63E875AF1F9CC7DC /* [CP] Check Pods Manifest.lock */,
 				39AA48D11D22218E008647DE /* Sources */,
 				39AA48D21D22218E008647DE /* Frameworks */,
 				39AA48D31D22218E008647DE /* Resources */,
+				3497F5AF4A3A5AAF85EF1045 /* [CP] Embed Pods Frameworks */,
+				BD04DEA4BDD3F9F9AC37FFFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1078,9 +1097,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39AA48EF1D22218E008647DE /* Build configuration list for PBXNativeTarget "WilddogIMDemoUITests" */;
 			buildPhases = (
+				FC92E078582ABEB42DFB2B88 /* [CP] Check Pods Manifest.lock */,
 				39AA48DC1D22218E008647DE /* Sources */,
 				39AA48DD1D22218E008647DE /* Frameworks */,
 				39AA48DE1D22218E008647DE /* Resources */,
+				CE87DD290BB9A82CAB6AFB76 /* [CP] Embed Pods Frameworks */,
+				2D5F19DD97FFCC58EE9504D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1295,6 +1317,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0036C2CE63E875AF1F9CC7DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		08D90302569CB32701B26761 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1308,6 +1345,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemo/Pods-WilddogIMDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D5F19DD97FFCC58EE9504D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3497F5AF4A3A5AAF85EF1045 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3F83D06EC17CABE0DA6ADF55 /* [CP] Embed Pods Frameworks */ = {
@@ -1325,7 +1392,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemo/Pods-WilddogIMDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BD04DEA4BDD3F9F9AC37FFFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoTests/Pods-WilddogIMDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE87DD290BB9A82CAB6AFB76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogIMDemoUITests/Pods-WilddogIMDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EDA9B693DA7D42D5B14334EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC92E078582ABEB42DFB2B88 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1644,6 +1756,7 @@
 		};
 		39AA48ED1D22218E008647DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF5790031B20CCCCC5E8B73D /* Pods-WilddogIMDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -1657,6 +1770,7 @@
 		};
 		39AA48EE1D22218E008647DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B9D1A9FEC365EA6E0A1630 /* Pods-WilddogIMDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WilddogIMTests/Info.plist;
@@ -1669,6 +1783,7 @@
 		};
 		39AA48F01D22218E008647DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59C3647452EAD34DBCC5C097 /* Pods-WilddogIMDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WilddogIMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1682,6 +1797,7 @@
 		};
 		39AA48F11D22218E008647DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 928AAC59209D1FEA91AB2405 /* Pods-WilddogIMDemoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WilddogIMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
